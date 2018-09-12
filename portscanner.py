@@ -15,6 +15,7 @@ except KeyboardInterrupt:
     print("[*] Application Shutting Down.")
     sys.exit(1)
 
+#get host (return ip value of host address/url)
 hostip = gethostbyname(host)
 
 
