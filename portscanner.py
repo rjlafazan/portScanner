@@ -20,4 +20,15 @@ except KeyboardInterrupt:
 #get host (return ip value of host address/url)
 hostip = gethostbyname(host)
 
+#for each number alias port in range(x, y), do the following
+for port in range(min_port, max_port):
+    try:
+        #call scan_host function and take host and port arguments from scan_host function below
+        response = scan_host(host, port)
 
+        #if scan_host value is 0 print "Port <number>: Open"
+        if response == 0:
+            print("[*] Port %d: Open" % (port))
+    #if error, pass and continue to execute
+    except Exception, e:
+        pass
