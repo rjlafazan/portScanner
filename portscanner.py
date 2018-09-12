@@ -32,3 +32,17 @@ for port in range(min_port, max_port):
     #if error, pass and continue to execute
     except Exception, e:
         pass
+
+def scan_host(host, port, r_code = 1):
+    try:
+        s = socket(AF_INET, SOCK_STREAM)
+
+        code = s.connect_ex((host, port))
+
+        if code == 0:
+            r_code = code
+        s.close()
+    except Exception, e:
+        pass
+        
+    return r_code
