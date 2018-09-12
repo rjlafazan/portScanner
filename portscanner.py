@@ -4,7 +4,7 @@ from datetime import datetime
 
 #settings.. max port set to 5000 for dev purposes
 host = ''
-max_port = 5000
+max_port = 100
 min_port = 1
 
 def scan_host(host, port, r_code = 1):
