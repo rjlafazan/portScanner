@@ -35,14 +35,19 @@ for port in range(min_port, max_port):
 
 def scan_host(host, port, r_code = 1):
     try:
+        #initiate sockets
         s = socket(AF_INET, SOCK_STREAM)
 
+        #execute connect function and capture connection result
         code = s.connect_ex((host, port))
 
+        #set r_code to 0 if code value is 0 (if execution is successful code is set to 0)
         if code == 0:
             r_code = code
         s.close()
+
+    #if error occurs pass and continue execution (r_code is still set to 1, when response variable receives it. Therefore it will not do anything)
     except Exception, e:
         pass
-        
+
     return r_code
